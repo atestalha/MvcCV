@@ -1,0 +1,31 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblExperience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h2>Experience</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>HEAD</th>
+        <th>SUBHEAD</th>
+        <th>DATE</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Head</td>
+            <td>@x.SubHead</td>
+            <td>@x.Date</td>
+            <td><a href="/Experience/RemoveExperience/@x.ID" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/Experience/BringExperience/@x.ID" class="btn btn-primary">REGULATE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Experience/AddExperience" class="btn btn-primary">ADD NEW EXPERIENCE</a>

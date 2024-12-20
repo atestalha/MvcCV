@@ -1,0 +1,29 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblAdmin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h2>Admin</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>USER NAME</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.UserName</td>
+            <td><a href="/Admin/DeleteAdmin/@x.ID" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/Admin/UpdateAdmin/@x.ID" class="btn btn-primary">UPDATE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/AddAdmin" class="btn btn-primary">ADD NEW ADMIN</a>
+

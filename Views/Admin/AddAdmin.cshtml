@@ -1,0 +1,18 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblAdmin>
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h4>New Admin Adding Page</h4>
+<br />
+<form method="post">
+    <input type="text" name="UserName" class="form-control" placeholder="Write the UserName" />
+    <br />
+    <input type="text" name="Password" class="form-control" placeholder="Write the Password" />
+    <br />
+    <button class="btn btn-info">SAVE INFORMATION</button>
+</form>
+
+

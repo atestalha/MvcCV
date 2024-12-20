@@ -1,0 +1,66 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblCertificate>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+@{string color = ""; }
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            
+                                <div class="tab-pane" id="timeline">
+                                    <!-- The timeline -->
+                                    <div class="timeline timeline-inverse">
+                                        <!-- timeline time label -->
+                                        @foreach (var x in Model)
+                                        {
+                                            if(x.ID %2==0)
+                                            {
+                                                color = "btn btn-success";
+                                            }
+                                            else
+                                            {
+                                                color = "btn btn-primary";
+                                            }
+                                            <div class="time-label">
+                                                <a href="/Certificate/UpdateCertificate/@x.ID" class="@color">
+                                                    <span class="@color">
+                                                        @x.Date
+                                                    </span>
+                                                </a>
+                                                
+                                            </div>
+                                            <div>
+                                                <div class="timeline-item">
+                                                    <div class="timeline-body">
+                                                        @x.Explanation
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                    <a href="/Certificate/NewCertificate/" class="btn btn-info">NEW CERTIFICATE</a>
+                                </div>
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+            </div>
+    </section>
+</body>
+</html>
+

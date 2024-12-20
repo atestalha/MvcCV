@@ -1,0 +1,19 @@
+﻿@model WebApplication3.Models.Entity.TblSkills
+@{
+    ViewBag.Title = "NewSkills";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br />
+<h4>Add Skills Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ABILITY")
+    @Html.TextBoxFor(x => x.Ability, new { @class = "form-control" })
+    <br />
+    @Html.Label("RATE")
+    @Html.TextBoxFor(x => x.Rate, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">ADD</button>
+</form>
+

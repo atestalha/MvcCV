@@ -1,0 +1,10 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblSocialMedia>
+
+<div class="social-icons">
+    @foreach (var x in Model)
+    {
+        <a class="social-icon" href="@x.Link"><i class="@x.icon"></i></a>
+    }
+
+</div>

@@ -1,0 +1,29 @@
+﻿@model WebApplication3.Models.Entity.TblExperience
+
+@{
+    ViewBag.Title = "BringExperience";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h4>Experience Update Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("TITLE")
+    @Html.TextBoxFor(x => x.Head, new { @class = "form-control" })
+    <br />
+    @Html.Label("SUBHEAD")
+    @Html.TextBoxFor(x => x.SubHead, new { @class = "form-control" })
+    <br />
+    @Html.Label("DATE")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.Label("EXPLANATION")
+    @Html.TextAreaFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-info">UPDATE</button>
+</form>
+

@@ -1,0 +1,21 @@
+﻿@model WebApplication3.Models.Entity.TblSocialMedia
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h4>Update Social Media Page</h4>
+<br />
+<form method="post">
+    @Html.Label("Name Social Media")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.Label("Link Social Media")
+    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+    <br />
+    @Html.Label("Icon Social Media")
+    @Html.TextBoxFor(x => x.icon, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">UPDATE</button>
+</form>
+

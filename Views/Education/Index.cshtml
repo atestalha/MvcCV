@@ -1,0 +1,46 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblEducation>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h2>Experience</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>HEAD</th>
+        <th>SUBHEAD</th>
+        <th>SUBHEAD2</th>
+        <th>GPA</th>
+        <th>DATE</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Head</td>
+            <td>@x.SubHead1</td>
+            <td>@x.SubHead2</td>
+            <td>@x.GPA</td>
+            <td>@x.Date</td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Education/RemoveEducation/@x.ID">
+                    <i class="fas fa-trash"></i>
+                    DELETE
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Education/UpdateEducation/@x.ID">
+                    <i class="fas fa-pencil-alt"></i>
+                    UPDATE
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Education/AddEducation" class="btn btn-primary">ADD NEW EDUCATION</a>
+

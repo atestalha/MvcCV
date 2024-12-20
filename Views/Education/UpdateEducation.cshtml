@@ -1,0 +1,29 @@
+﻿@model WebApplication3.Models.Entity.TblEducation
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h4>Update Education Page</h4>
+<br />
+<form method="post">
+    @Html.Label("HEAD")
+    @Html.TextBoxFor(x => x.Head, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Head, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("SUBHEAD1")
+    @Html.TextBoxFor(x => x.SubHead1, new { @class = "form-control" })
+    <br />
+    @Html.Label("SUBHEAD2")
+    @Html.TextBoxFor(x => x.SubHead2, new { @class = "form-control" })
+    <br />
+    @Html.Label("GPA")
+    @Html.TextBoxFor(x => x.GPA, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Head, "", new { @style = "color:blue" })
+    <br />
+    @Html.Label("DATE")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">UPDATE</button>
+</form>
+

@@ -1,0 +1,19 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblHobby>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h2>Hobby Page</h2>
+<br />
+<form method="post">
+    @foreach (var x in Model)
+    {
+        <label>Hobby1</label>
+        <textarea rows="3" class="form-control" name="Hobby1">@x.Hobby1</textarea>
+        <label>Hobby2</label>
+<textarea rows="3" class="form-control" name="Hobby2">@x.Hobby2</textarea>
+    }
+    <button class="btn btn-success">UPDATE</button>
+</form>

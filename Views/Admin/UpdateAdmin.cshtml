@@ -1,0 +1,23 @@
+﻿@model WebApplication3.Models.Entity.TblAdmin
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<br />
+<h4>Admin Update Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("USER NAME")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("PASSWORD")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <br />
+    <button class="btn btn-info">UPDATE</button>
+</form>
+

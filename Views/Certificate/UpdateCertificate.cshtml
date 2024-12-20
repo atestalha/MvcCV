@@ -1,0 +1,19 @@
+﻿@model WebApplication3.Models.Entity.TblCertificate
+@{
+    ViewBag.Title = "UpdateCertificate";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h4>Update Certificate Page</h4>
+<br />
+<form method="post">
+    @Html.Label("EXPLANATION")
+    @Html.TextBoxFor(x => x.Explanation, new { @class = "form-control" })
+    <br />
+    @Html.Label("DATE")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">UPDATE</button>
+    <a href="/Certificate/DeleteCertificate/@ViewBag.d" class="btn btn-danger">DELETE</a>
+</form>
+

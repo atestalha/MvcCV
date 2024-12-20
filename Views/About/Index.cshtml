@@ -1,0 +1,31 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblAbout>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h2>Update About Page</h2>
+<br />
+<form method="post">
+    @foreach (var x in Model)
+    {
+        <label>Name</label>
+        <input type="text" name="Name" value="@x.Name" class="form-control" />
+        <label>SurName</label>
+        <input type="text" name="Surname" value="@x.Surname" class="form-control" />
+        <label>Address</label>
+        <input type="text" name="Address" value="@x.Address" class="form-control" />
+        <label>Call Number</label>
+        <input type="text" name="CallNumber" value="@x.CallNumber" class="form-control" />
+        <label>Mail</label>
+        <input type="text" name="Mail" value="@x.Mail" class="form-control" />
+        <label>Explanation</label>
+        <textarea rows="5" class="form-control" name="Explanation">@x.Explanation</textarea>
+        <label>Picture</label>
+        <input type="text" name="Picture" value="@x.Picture" class="form-control" />
+    }
+    <br />
+    <button class="btn btn-success">UPDATE</button>
+</form>
+

@@ -1,0 +1,21 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblExperience>
+@{
+    ViewBag.Title = "AddExperience";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<br />
+<h4>New Experience Adding Page</h4>
+<br />
+<form method="post">
+    <input type="text" name="Title" class="form-control" placeholder="Write the title" />
+    <br />
+    <input type="text" name="SubHead" class="form-control" placeholder="Write the SubHead" />
+    <br />
+    <input type="text" name="Date" class="form-control" placeholder="Date" />
+    <br />
+    <textarea placeholder="Write the description" name="Explanation" class="form-control" rows="5"></textarea>
+    <br />
+    <button class="btn btn-info">SAVE INFORMATION</button>
+</form>
+

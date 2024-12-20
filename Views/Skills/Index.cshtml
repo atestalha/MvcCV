@@ -1,0 +1,85 @@
+﻿@using WebApplication3.Models.Entity
+@model List<TblSkills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+@{ string color = "";}
+@{ string labelcolor = "";}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">MY TALENT LIST</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <a href="/Skills/NewSkills/" class="btn btn-info">ADD NEW SKILL</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">ID</th>
+                                            <th>Ability</th>
+                                            <th>Progress</th>
+                                            <th style="width: 40px">Rate<th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+                                            if(x.Rate >=0 && x.Rate<=50)
+                                            {
+                                                color = "progress-bar bg-danger";
+                                                labelcolor = "progress-bar bg-danger";
+                                            }
+                                            if (x.Rate >= 51 && x.Rate <= 70)
+                                            {
+                                                color = "progress-bar bg-warning";
+                                                labelcolor = "progress-bar bg-warning";
+                                            }
+                                            if (x.Rate >= 71 && x.Rate <= 84)
+                                            {
+                                                color = "progress-bar bg-primary";
+                                                labelcolor = "progress-bar bg-primary";
+                                            }
+                                            if (x.Rate >= 85 && x.Rate <= 100)
+                                            {
+                                                color = "progress-bar bg-success";
+                                                labelcolor = "progress-bar bg-success";
+                                            }
+                                            <tr>
+                                                <td>@x.ID</td>
+                                                <td>@x.Ability</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="@color" style="width: @x.Rate%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="@labelcolor">@x.Rate%</span></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>
+
